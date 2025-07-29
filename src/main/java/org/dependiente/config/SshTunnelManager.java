@@ -26,15 +26,15 @@ import java.nio.charset.StandardCharsets;
 @ConditionalOnProperty(name = "ssh.tunnel", havingValue = "active")
 public class SshTunnelManager {
 
-    private static final String SSH_USER = "ec2-user";
-    private static final String SSH_REMOTE_HOST = "44.215.190.245";
-    private static final String SSH_PRIVATE_KEY_PATH = "classpath:test.pem";
-    private static final String SSH_PASS_PHRASE = "gal";
+    private static final String SSH_USER = "";
+    private static final String SSH_REMOTE_HOST = "";
+    private static final String SSH_PRIVATE_KEY_PATH = "";
+    private static final String SSH_PASS_PHRASE = "";
     private static final Integer SSH_REMOTE_PORT = 22;
-    private static final String DATASOURCE_URL = "jdbc:postgresql://localhost:5432/uatgal2";
-    private static final String DATASOURCE_USERNAME = "uatusergal";
-    private static final String DATASOURCE_PASSWORD = "uatpassw0rdgal";
-    private static final String DRIVER_CLASS_NAME = "org.postgresql.Driver";
+    private static final String DATASOURCE_URL = "";
+    private static final String DATASOURCE_USERNAME = "";
+    private static final String DATASOURCE_PASSWORD = "";
+    private static final String DRIVER_CLASS_NAME = "";
     private Session session;
     private final ResourceLoader resourceLoader;
 
@@ -65,7 +65,7 @@ public class SshTunnelManager {
 
         try {
             if (session != null && session.isConnected()) {
-                session.setPortForwardingL(5432, "rds-gal-postgres-uat.cluster-c52ockommp8u.us-east-1.rds.amazonaws.com", 5432);
+                session.setPortForwardingL(5432, "fuente de datos", 5432);
                 dataSource.setDriverClassName(DRIVER_CLASS_NAME);
                 dataSource.setUrl(DATASOURCE_URL);
                 dataSource.setUsername(DATASOURCE_USERNAME);
