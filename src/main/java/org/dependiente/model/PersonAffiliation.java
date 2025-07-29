@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "person_affiliation")
+@Table(name = "person_affiliation", schema = "migration")
 public class PersonAffiliation implements Serializable {
 
     @Id
